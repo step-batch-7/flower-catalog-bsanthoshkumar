@@ -1,0 +1,25 @@
+Home Page:-
+  heading at top of the Page.
+  flower image at left.
+  links to navigate to other pages.
+  jug image which will hide on click.
+
+Abeliophyllum Page:-
+  navigation to homepage.
+  heading at top of the Page.
+  flower image at left.
+  text at the right of the image.
+  link to download pdf file.
+
+Ageratum Page;-
+  navigation to homepage.
+  heading at top of the Page.
+  flower image at left.
+  text at the right of the image.
+  link to download pdf file.
+
+Guest book:-
+  navigation to homepage.
+  heading at top of the Page.
+  two text boxes and submit button.
+  list comments along with date and time in reverse chronological order.
