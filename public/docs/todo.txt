@@ -5,10 +5,10 @@ Home Page:-
 --partially done--  jug image which will hide on click.
 
 Abeliophyllum Page:-
-  navigation to homepage.
-  heading at top of the Page.
-  flower image at left.
-  text at the right of the image.
+--done--  navigation to homepage.
+--done--  heading at top of the Page.
+--done--  flower image at left.
+--done--  text at the right of the image.
   link to download pdf file.
 
 Ageratum Page;-
