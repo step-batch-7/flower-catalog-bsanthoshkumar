@@ -12,9 +12,7 @@ body {
 #innerDivision {
   display: flex-end;
   margin-top: 20%;
-}
-#paragraph {
-  padding-left: 1%;
-  margin-top: 5%;
   text-align: justify;
+  padding-left: 1%;
+  font-size: 16px;
 }
