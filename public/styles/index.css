@@ -10,8 +10,7 @@
   display: flex;
 }
 #innerDivision {
-  /* display: flex-end; */
-  justify-content: center;
+  display: flex-end;
   margin-left: 10%;
   margin-top: 15%;
 }

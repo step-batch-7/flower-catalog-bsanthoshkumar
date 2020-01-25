@@ -1,0 +1,20 @@
+body {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+#heading {
+  border-bottom: solid black 1px;
+  color: orange;
+}
+#outerDivision {
+  display: flex;
+}
+#innerDivision {
+  display: flex-end;
+  margin-top: 20%;
+}
+#paragraph {
+  padding-left: 1%;
+  margin-top: 5%;
+  text-align: justify;
+}
