@@ -1,8 +1,8 @@
 Home Page:-
-  heading at top of the Page.
-  flower image at left.
-  links to navigate to other pages.
-  jug image which will hide on click.
+--done--  heading at top of the Page.
+--done--  flower image at left.
+--done--  links to navigate to other pages.
+--partially done--  jug image which will hide on click.
 
 Abeliophyllum Page:-
   navigation to homepage.

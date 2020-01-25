@@ -1,0 +1,20 @@
+#homePage{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+#heading {
+  color: orange;
+  border-bottom: solid black 1px;
+}
+#outerDivision {
+  display: flex;
+}
+#innerDivision {
+  /* display: flex-end; */
+  justify-content: center;
+  margin-left: 10%;
+  margin-top: 15%;
+}
+#freshOrigins{
+  border: solid black 1px ;
+}
