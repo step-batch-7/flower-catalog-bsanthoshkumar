@@ -20,11 +20,6 @@ const serveStaticFile = req => {
   return response;
 };
 
-const serveHomePage = req => {
-  req.url = '/index.html';
-  return serveStaticFile(req);
-};
-
 const createRow = (commentRows, line) => {
   return (
     commentRows +
@@ -61,7 +56,10 @@ const createCommentObject = body => {
 
 const saveCommentAndRedirect = req => {
   const comments = getComments();
-  comments.unshift(createCommentObject(req.body));
+  const {name ,comment} = req.body;
+  if(name != "" && comment != "") {
+    comments.unshift(createCommentObject(req.body));
+  }
   writeFileSync('./comments.json', JSON.stringify(comments));
   const response = new Response();
   response.setHeader ('location','/guestBook.html');
