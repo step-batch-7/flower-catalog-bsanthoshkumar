@@ -9,17 +9,17 @@ Abeliophyllum Page:-
 --done--  heading at top of the Page.
 --done--  flower image at left.
 --done--  text at the right of the image.
-  link to download pdf file.
+--done--  link to download pdf file.
 
 Ageratum Page;-
 --done--  navigation to homepage.
 --done--  heading at top of the Page.
 --done--  flower image at left.
 --done--  text at the right of the image.
-  link to download pdf file.
+--done--  link to download pdf file.
 
 Guest book:-
 --done--  navigation to homepage.
 --done--  heading at top of the Page.
 --done--  two text boxes and submit button.
---partially done--  list comments along with date and time in reverse chronological order.
+--done--  list comments along with date and time in reverse chronological order.
