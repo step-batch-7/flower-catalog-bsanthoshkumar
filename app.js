@@ -26,7 +26,6 @@ const serveHomePage = req => {
 };
 
 const createRow = (commentRows, line) => {
-  console.log(line);
   return (
     commentRows +
     `
