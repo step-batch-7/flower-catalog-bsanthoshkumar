@@ -1,8 +1,8 @@
-const { readFileSync, existsSync, statSync } = require('fs');
+const { readFileSync, existsSync, statSync, writeFileSync } = require('fs');
 const Response = require('./lib/response');
 const CONTENT_TYPES = require('./lib/mimeTypes');
-const STATIC_FOLDER = `${__dirname}/public`;
 const { loadTemplate } = require('./lib/viewTemplate');
+const STATIC_FOLDER = `${__dirname}/public`;
 
 const isFileExists = path => {
   return existsSync(path) && statSync(path);
@@ -25,34 +25,54 @@ const serveHomePage = req => {
   return serveStaticFile(req);
 };
 
-const createRow = line => {
-  return `
+const createRow = (commentRows, line) => {
+  console.log(line);
+  return (
+    commentRows +
+    `
   <tr>
   <td>${line.date}</td>
   <td>${line.name}</td>
   <td>${line.comment}</td>
-</tr>`;
+</tr>`
+  );
 };
 
 const getComments = () => {
-  const commentsList = JSON.parse(readFileSync('./comments.json'));
-  return commentsList.reduce(createRow, '');
+  if (!existsSync('./comments.json')) return [];
+  return JSON.parse(readFileSync('./comments.json'));
 };
 
 const serveGuestPage = req => {
   const comments = getComments();
+  const commentRows = comments.reduce(createRow, '');
   const response = new Response();
   response.statusCode = 200;
-  response.body = loadTemplate('guestBook.html', { COMMENTS: comments });
+  response.body = loadTemplate('guestBook.html', { COMMENTS: commentRows });
   response.setHeader('Content-Type', CONTENT_TYPES.html);
   response.setContentLength();
   return response;
 };
 
+const createCommentObject = body => {
+  const { name, comment } = body;
+  const date = new Date();
+  return { date, name, comment };
+};
+
+const saveCommentAndRedirect = req => {
+  const comments = getComments();
+  comments.unshift(createCommentObject(req.body));
+  writeFileSync('./comments.json', JSON.stringify(comments));
+  const response = new Response();
+  response.setHeader ('location','/guestBook.html');
+  response.statusCode = 303;
+  return response;
+};
+
 const findHandler = req => {
-  if (req.method === 'GET' && req.url === '/') return serveHomePage;
   if (req.method === 'GET' && req.url === '/guestBook.html') return serveGuestPage;
-  if (req.method === 'POST' && req.url === 'saveComment') return saveComment;
+  if (req.method === 'POST' && req.url === '/saveComment') return saveCommentAndRedirect;
   if (req.method === 'GET') return serveStaticFile;
   return () => new Response();
 };

@@ -2,7 +2,7 @@ Home Page:-
 --done--  heading at top of the Page.
 --done--  flower image at left.
 --done--  links to navigate to other pages.
---partially done--  jug image which will hide on click.
+--done--  jug image which will hide on click.
 
 Abeliophyllum Page:-
 --done--  navigation to homepage.
