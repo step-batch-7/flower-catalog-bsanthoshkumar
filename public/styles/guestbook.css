@@ -9,12 +9,3 @@ body {
 #submit {
   width: 10%;
 }
-#outerDivision {
-  display: flex;
-  border-top: solid black 1px;
-  border-bottom: solid black 1px;
-}
-
-.innerDivision{
-  margin-right: 100px;
-}
