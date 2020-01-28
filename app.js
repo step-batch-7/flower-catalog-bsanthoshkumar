@@ -22,11 +22,12 @@ const serveStaticFile = (request, response) => {
 };
 
 const createRow = (commentRows, line) => {
+  const {date, name,comment} = line;
   const html = `
   <tr>
-    <td>${line.date}</td>
-    <td>${line.name}</td>
-    <td>${line.comment}</td>
+    <td>${new Date(date).toGMTString()}</td>
+    <td>${name}</td>
+    <td>${comment}</td>
   </tr>`;
   return commentRows + html;
 };
