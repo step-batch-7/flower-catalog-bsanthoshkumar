@@ -92,7 +92,7 @@ const findHandler = req => {
   if (req.method === 'GET' && req.url === '/guestBook.html') return serveGuestPage;
   if (req.method === 'POST' && req.url === '/saveComment') return saveCommentAndRedirect;
   if (req.method === 'GET') return serveStaticFile;
-  return () => new Response();
+  return pageNotFound;
 };
 
 module.exports = { findHandler };
