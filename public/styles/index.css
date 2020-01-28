@@ -1,10 +1,12 @@
 #homePage{
   padding-left: 5%;
   padding-right: 5%;
+  font-family: sans-serif;
 }
 #heading {
   color: orange;
   border-bottom: solid black 1px;
+  font-weight: 400;
 }
 #outerDivision {
   display: flex;

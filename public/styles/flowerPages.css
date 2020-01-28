@@ -1,9 +1,11 @@
 body {
   margin-left: 100px;
   margin-right: 100px;
+  font-family: sans-serif;
 }
 #heading {
   border-bottom: solid black 1px;
+  font-weight: 400;
   color: orange;
 }
 #outerDivision {

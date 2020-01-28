@@ -1,19 +1,21 @@
 <html>
   <head>
     <title>Guest Book</title>
-    <link rel="stylesheet" href="../styles/guestbook.css" />
+    <link rel="stylesheet" href="./styles/guestbook.css" />
   </head>
   <body>
-    <h1 id="heading" align="center">
+    <h1 class="heading" align="center">
       <a href="../index.html"><<</a>
       Guest Book
     </h1>
-    <form action="saveComment" method="POST">
-      <legend><h1>Leave a comment</h1></legend>
-      Name: <input type="text" name="name" /> <br />
+    <form action="saveComment" method="POST" class="form">
+      <h1 class="formHeading">Leave a comment</h1>
+      Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" name="name" class="textbox" /> <br />
       <br />
-      Comment: <textarea name="comment" cols="30" rows="5"></textarea> <br />
-      <input type="submit"/>
+      Comment:
+      <textarea name="comment" cols="36" rows="5" class="textbox"></textarea> <br />
+      <input type="submit" class="submit" />
     </form>
     <hr />
     <table border="1" cellspacing="0px" cellpadding="15%">
