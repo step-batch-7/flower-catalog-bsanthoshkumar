@@ -21,15 +21,13 @@ const serveStaticFile = req => {
 };
 
 const createRow = (commentRows, line) => {
-  return (
-    commentRows +
-    `
+  const html = `
   <tr>
-  <td>${line.date}</td>
-  <td>${line.name}</td>
-  <td>${line.comment}</td>
-</tr>`
-  );
+    <td>${line.date}</td>
+    <td>${line.name}</td>
+    <td>${line.comment}</td>
+  </tr>`;
+  return commentRows + html;
 };
 
 const getComments = () => {
@@ -56,13 +54,13 @@ const createCommentObject = body => {
 
 const saveCommentAndRedirect = req => {
   const comments = getComments();
-  const {name ,comment} = req.body;
-  if(name != "" && comment != "") {
+  const { name, comment } = req.body;
+  if (name != '' && comment != '') {
     comments.unshift(createCommentObject(req.body));
   }
   writeFileSync('./comments.json', JSON.stringify(comments));
   const response = new Response();
-  response.setHeader ('location','/guestBook.html');
+  response.setHeader('location', '/guestBook.html');
   response.statusCode = 303;
   return response;
 };
