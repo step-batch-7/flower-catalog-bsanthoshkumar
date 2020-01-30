@@ -62,7 +62,7 @@ const pickupParams = (query, keyValue) => {
 };
 
 const readParams = keyValueTextPairs => {
-  keyValueTextPairs.split('&').reduce(pickupParams, {});
+  return keyValueTextPairs.split('&').reduce(pickupParams, {});
 };
 
 const parseBody = body => {
