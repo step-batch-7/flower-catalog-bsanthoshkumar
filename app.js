@@ -1,3 +1,5 @@
+const invalidArrayLength = 0;
+
 class App {
   constructor() {
     this.routes = [];
@@ -13,10 +15,13 @@ class App {
   }
   serve(req, res) {
     console.log('Request: ', req.url, req.method);
-    const matchingHandlers = this.routes.filter(route => matchRoute(route, req));
-    console.log(matchingHandlers);
+    const matchingHandlers = this.routes.filter(route => {
+      return matchRoute(route, req);
+    });
     const next = function() {
-      if (matchingHandlers.length === 0) return;
+      if (matchingHandlers.length === invalidArrayLength) {
+        return;
+      }
       const router = matchingHandlers.shift();
       router.handler(req, res, next);
     };
@@ -25,7 +30,9 @@ class App {
 }
 
 const matchRoute = function(route, req) {
-  if (route.method) return req.method == route.method && req.url.match(route.path);
+  if (route.method) {
+    return req.method === route.method && req.url.match(route.path);
+  }
   return true;
 };
 
