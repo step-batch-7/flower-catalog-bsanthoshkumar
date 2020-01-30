@@ -6,6 +6,7 @@ const STATIC_FOLDER = `${__dirname}/public`;
 
 const redirectStatusCode = 303;
 const notFoundStatusCode = 404;
+const methodNotAllowedStatusCode = 405;
 
 const isFileExists = path => {
   return existsSync(path) && statSync(path);
@@ -101,12 +102,18 @@ const readBody = (request, response, next) => {
   });
 };
 
+const methodNotAllowed = (request, response) => {
+  response.writeHead(methodNotAllowedStatusCode);
+  response.end();
+};
 const app = new App();
 
 app.use(readBody);
 app.get('guestBook.html', serveGuestPage);
 app.get('', serveStaticFile);
 app.post('saveComment', saveCommentAndRedirect);
-app.use(pageNotFound);
+app.get(pageNotFound);
+app.post(pageNotFound);
+app.use(methodNotAllowed);
 
 module.exports = { app };
