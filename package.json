@@ -1,0 +1,29 @@
+{
+  "name": "flower-catalog-bsanthoshkumar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/step-batch-7/flower-catalog-bsanthoshkumar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/step-batch-7/flower-catalog-bsanthoshkumar/issues"
+  },
+  "homepage": "https://github.com/step-batch-7/flower-catalog-bsanthoshkumar#readme",
+  "devDependencies": {
+    "supertest": "^4.0.2"
+  }
+}
