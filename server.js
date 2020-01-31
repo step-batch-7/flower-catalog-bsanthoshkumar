@@ -1,5 +1,5 @@
 const { Server } = require('http');
-const { app } = require('./handlers');
+const { app } = require('./lib/handlers');
 const defaultPort = 4000;
 
 const main = cmdLineArgs => {
