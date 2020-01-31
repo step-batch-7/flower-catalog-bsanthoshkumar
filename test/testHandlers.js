@@ -44,3 +44,21 @@ describe('GET ageratum page', function() {
       .expect('Content-Length', '1217', done);
   });
 });
+
+describe('GET nonExisting url', function() {
+  it('should return 404 for non existing url', function(done) {
+    request(app.serve.bind(app))
+      .get('/badPage')
+      .set('Accept', '*/*')
+      .expect(404, done);
+  });
+});
+
+describe('POST comments', () => {
+  it('should post on the register url', function(done) {
+    request(app.serve.bind(app))
+      .post('/saveComment')
+      .send('name=santhosh&comment=nice')
+      .expect(303, done);
+  });
+});
