@@ -1,8 +1,8 @@
 const request = require('supertest');
 const { app } = require('../lib/handlers');
 
-describe('GET home page', function() {
-  it('should get homepage / path', function(done) {
+describe('GET html pages', function() {
+  it('should get homepage /', function(done) {
     request(app.serve.bind(app))
       .get('/')
       .set('Accept', '*/*')
@@ -10,10 +10,7 @@ describe('GET home page', function() {
       .expect('Content-Type', 'text/html')
       .expect('Content-Length', '792', done);
   });
-});
-
-describe('GET index page', function() {
-  it('should get ./public/index.html path', function(done) {
+  it('should get index.html page', function(done) {
     request(app.serve.bind(app))
       .get('/index.html')
       .set('Accept', '*/*')
@@ -21,10 +18,7 @@ describe('GET index page', function() {
       .expect('Content-Type', 'text/html')
       .expect('Content-Length', '792', done);
   });
-});
-
-describe('GET abeliophyllum page', function() {
-  it('should get ./public/abeliophyllum.html path', function(done) {
+  it('should get abeliophyllum.html page', function(done) {
     request(app.serve.bind(app))
       .get('/abeliophyllum.html')
       .set('Accept', '*/*')
@@ -32,16 +26,51 @@ describe('GET abeliophyllum page', function() {
       .expect('Content-Type', 'text/html')
       .expect('Content-Length', '1534', done);
   });
-});
-
-describe('GET ageratum page', function() {
-  it('should get ./public/ageratum.html path', function(done) {
+  it('should get ageratum.html page', function(done) {
     request(app.serve.bind(app))
       .get('/ageratum.html')
       .set('Accept', '*/*')
       .expect(200)
       .expect('Content-Type', 'text/html')
       .expect('Content-Length', '1217', done);
+  });
+});
+
+describe('GET javascript files', function() {
+  it('should get hideJar.js script', function(done) {
+    request(app.serve.bind(app))
+      .get('/scripts/hideJar.js')
+      .set('Accept', '*/*')
+      .expect(200)
+      .expect('Content-Type', 'application/javascript')
+      .expect('Content-Length', '235', done);
+  });
+});
+
+describe('GET css files', function() {
+  it('should get index.css script', function(done) {
+    request(app.serve.bind(app))
+      .get('/styles/index.css')
+      .set('Accept', '*/*')
+      .expect(200)
+      .expect('Content-Type', 'text/css')
+      .expect('Content-Length', '324', done);
+  });
+  it('should get flowerPages.css script', function(done) {
+    request(app.serve.bind(app))
+      .get('/styles/flowerPages.css')
+      .set('Accept', '*/*')
+      .expect(200)
+      .expect('Content-Type', 'text/css')
+      .expect('Content-Length', '321', done);
+  });
+  it('should get guestBook.css script', function(done) {
+    request(app.serve.bind(app))
+      .get('/styles/guestBook.css')
+      .set('Accept', '*/*')
+      .expect(200)
+      .expect('Content-Type', 'text/css')
+      .expect('Content-Length', '567', done);
   });
 });
 
