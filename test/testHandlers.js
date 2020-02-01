@@ -84,7 +84,7 @@ describe('GET nonExisting url', function() {
 });
 
 describe('POST comments', () => {
-  it('should post on the register url', function(done) {
+  it('should post on the saveComment url', function(done) {
     request(app.serve.bind(app))
       .post('/saveComment')
       .send('name=santhosh&comment=nice')
